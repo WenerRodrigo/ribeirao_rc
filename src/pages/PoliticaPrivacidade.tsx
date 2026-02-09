@@ -188,7 +188,7 @@ export default function PoliticaPrivacidade() {
                   <strong>Email:</strong> contato@ribeiraocambio.com.br
                 </p>
                 <p className="text-gray-700 mb-2">
-                  <strong>Telefone:</strong> (16) 99999-9999
+                  <strong>Telefone:</strong> (16) 98111-5555
                 </p>
                 <p className="text-gray-700">
                   <strong>Endereço:</strong> Ribeirão Preto, SP
