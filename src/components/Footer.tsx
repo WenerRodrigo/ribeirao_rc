@@ -76,7 +76,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Phone size={20} className="text-blue-400 mt-1 flex-shrink-0" />
-                <span className="text-gray-400">(16) 99796-9717</span>
+                <span className="text-gray-400">(16) 98111-5555</span>
               </li>
               <li className="flex items-start space-x-3">
                 <Mail size={20} className="text-blue-400 mt-1 flex-shrink-0" />

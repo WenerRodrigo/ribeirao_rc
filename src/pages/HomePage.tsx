@@ -1,12 +1,14 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import WhatsAppButton from '../components/WathasAppButton';
+
+
 import oficinaImage from '../assets/oficina.jpg';
 import qualidadeImage from '../assets/qualidade.jpg';
 import cambiosCompletos from '../assets/cambios-completos.jpg';
 import pecasIndividuias from '../assets/pecas.webp';
 import kitEmbreagem from '../assets/kit-emgreagem.png';
 import history from '../assets/history.png';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import WhatsAppButton from '../components/WathasAppButton';
 
 export default function HomePage() {
   const scrollToSection = (id: string) => {
@@ -145,7 +147,7 @@ export default function HomePage() {
                   com garantia e qualidade assegurada.
                 </p>
                 <a
-                  href="https://wa.me/5516999999999"
+                  href="https://wa.me/5516981115555"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center"
@@ -170,7 +172,7 @@ export default function HomePage() {
                   para manutenção e reparo de câmbios automotivos
                 </p>
                 <a
-                  href="https://wa.me/5516999999999"
+                  href="https://wa.me/5516981115555"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center"
@@ -195,7 +197,7 @@ export default function HomePage() {
                   performance e durabilidade para seu veículo.
                 </p>
                 <a
-                  href="https://wa.me/5516999999999"
+                  href="https://wa.me/5516981115555"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center"
@@ -262,7 +264,7 @@ export default function HomePage() {
             Entre em contato conosco e encontre as melhores peças para seu veículo
           </p>
           <a
-            href="https://wa.me/5516997969717?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20peças%20de%20câmbio."
+            href="https://wa.me/5516981115555?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20peças%20de%20câmbio."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-green-500 text-white px-10 py-4 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 font-semibold text-lg shadow-xl"
