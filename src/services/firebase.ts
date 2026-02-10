@@ -23,7 +23,7 @@ export const auth = getAuth(app);
 export const storage = getStorage(app);
 
 // Analytics (só funciona no browser)
-export let analytics: any = null;
+export let analytics: unknown = null;
 
 isSupported().then((supported) => {
   if (supported) {
