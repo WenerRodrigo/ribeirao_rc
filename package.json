@@ -12,6 +12,7 @@
     "cy:ci": "start-server-and-test 'vite preview --port 5173' http://localhost:5173 cy:run"
   },
   "dependencies": {
+    "firebase": "^12.9.0",
     "lucide-react": "^0.545.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
