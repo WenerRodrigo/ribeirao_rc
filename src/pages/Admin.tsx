@@ -38,7 +38,7 @@ const emptyForm: ProductForm = {
   badge: "",
   guarantee: "6 meses",
   availability: "Pronta entrega",
-  shipping: "Envio em até 24h",
+  shipping: "Envio em até 24h após confirmação do pagamento",
 };
 
 interface DbProduct {
