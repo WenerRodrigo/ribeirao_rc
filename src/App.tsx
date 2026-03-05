@@ -1,78 +1,36 @@
-import { useEffect, useState } from "react";
-import HomePage from "./pages/HomePage";
-import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
-import TermosUso from "./pages/TermosUso";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import AdminLogin from "./pages/AdminLogin";
+import Admin from "./pages/Admin";
+import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
-function App() {
-  const [currentPage, setCurrentPage] = useState<string>("home");
+const queryClient = new QueryClient();
 
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === "/politica-privacidade") {
-      setCurrentPage("politica");
-    } else if (path === "/termos-uso") {
-      setCurrentPage("termos");
-    } else {
-      setCurrentPage("home");
-    }
-
-    const handlePopState = () => {
-      const path = window.location.pathname;
-      if (path === "/politica-privacidade") {
-        setCurrentPage("politica");
-      } else if (path === "/termos-uso") {
-        setCurrentPage("termos");
-      } else {
-        setCurrentPage("home");
-      }
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
-
-  useEffect(() => {
-    const handleLinkClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest("a");
-
-      if (link && link.href) {
-        const url = new URL(link.href);
-        if (url.origin === window.location.origin) {
-          const path = url.pathname;
-          if (
-            path === "/politica-privacidade" ||
-            path === "/termos-uso" ||
-            path === "/"
-          ) {
-            e.preventDefault();
-            window.history.pushState({}, "", path);
-            if (path === "/politica-privacidade") {
-              setCurrentPage("politica");
-            } else if (path === "/termos-uso") {
-              setCurrentPage("termos");
-            } else {
-              setCurrentPage("home");
-            }
-            window.scrollTo(0, 0);
-          }
-        }
-      }
-    };
-
-    document.addEventListener("click", handleLinkClick);
-    return () => document.removeEventListener("click", handleLinkClick);
-  }, []);
-
-  if (currentPage === "politica") {
-    return <PoliticaPrivacidade />;
-  }
-
-  if (currentPage === "termos") {
-    return <TermosUso />;
-  }
-
-  return <HomePage />;
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/pecas" element={<Products />} />
+          <Route path="/pecas/:id" element={<ProductDetail />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;
